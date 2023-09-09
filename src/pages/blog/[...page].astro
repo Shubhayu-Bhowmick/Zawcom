@@ -3,10 +3,23 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import { Card, Pagination } from 'accessible-astro-components'
 
 export async function getStaticPaths({ paginate }) {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const data = await response.json()
+  const newdata = [{
+    "userId": "Dipanjan Rout",
+    "id": 1,
+    "imgsrc": "/ecommerce.jpg",
+    "title": "Discover the Top 5 D2C Trends Shaping 2023's E-Commerce Landscape",
+    "body": "In 2023, the Direct-to-Consumer (D2C) sector is poised for significant transformation within the ever-evolving online shopping landscape. Several key trends are set to define this exciting journey for D2C brands, encompassing the fusion of data and technology to elevate customer experiences through highly personalized product offerings and marketing initiatives. By adeptly gathering and analyzing consumer preferences, behaviors, and emerging trends, brands are tailoring their strategies with pinpoint precision. Advanced tools like AI and machine learning are playing pivotal roles in crafting individualized experiences, fostering strong connections, and enhancing overall customer satisfaction. Furthermore, the rise of subscription-based models is reshaping the way D2C brands engage with their audiences. Monthly subscriptions and product replenishment services not only ensure a steady stream of revenue but also nurture customer loyalty, significantly boosting the lifetime value of each patron. These models, besides providing convenience to consumers, establish deeper and long-lasting relationships between brands and their customers. Sustainability has emerged as a defining factor, especially among environmentally conscious Gen-Z shoppers. In today's crowded marketplace, consumers have the power to choose brands that align with their values. As a result, D2C brands, those that have a direct connection with consumers, are increasingly embracing eco-friendly practices. This not only deepens their connections with customers but also sets them apart in the fiercely competitive market. Moreover, livestream shopping, initially popularized on platforms like YouTube and now flourishing on TikTok and Instagram, is revolutionizing product reviews and consumer engagement. These video-driven formats offer detailed insights, from try-ons to durability tests, in a captivating manner. Collaborations with influencers for live reviews enable brands to tap into their extensive reach and build trust among their followers seeking authentic endorsements. In addition, the seamless integration of e-commerce within social media platforms remains a strategic forte for D2C brands. Partnering with influencers amplifies brand visibility and establishes direct connections with potential customers who value authentic endorsements. Careful selection of the right influencer and platform aligns with the brand's objectives, optimizing the impact of influencer synergies. In this swiftly evolving sphere of D2C commerce, these trends hold transformative potential for brands that embrace change and innovation. Personalization, subscription models, sustainability practices, livestream shopping experiences, and influencer partnerships are reshaping how D2C brands interact with customers, cultivate meaningful experiences, and assert relevance in a fiercely competitive market. By embracing these trends, D2C brands position themselves as trailblazers in the industry, setting the stage for a triumphant and transformative 2023. Keep a close watch as these trends unfold, propelling the evolution of the D2C landscape into exhilarating new territories."
+  },
+  {
+    "userId": "Dipanjan Rout",
+    "id": 2,
+    "imgsrc": "/sales.jpg",
+    "title": "Exploring the Leading 7 Scaling Hurdles Confronting D2C Brands in 2023",
+    "body": "Amid the ongoing digital revolution reshaping India's retail landscape, Direct-to-Consumer (D2C) brands are thriving in an environment energized by a staggering 700 million internet users and 190 million online shoppers. The appeal of establishing direct connections with consumers, circumventing traditional intermediaries, has fueled a surge in D2C brands. With over 600 brands already operating and an estimated market size of approximately $55 billion USD in 2022, the terrain is undeniably dynamic but riddled with challenges that demand innovative solutions. These challenges include striking a delicate balance between personalization and acquisition costs by leveraging AI and data analytics, mastering the intricacies of supply chain management, expanding market presence while managing acquisition expenditures judiciously, navigating the Personalization Paradox by respecting data privacy, assembling proficient teams for scaling, finding equilibrium between broad outreach and deep engagement, and pivoting towards omnichannel strategies amidst evolving constraints. In this swiftly evolving D2C realm, challenges and opportunities are intricately intertwined. As the industry continues to evolve, addressing these obstacles with innovation, agile strategies, and a keen understanding of consumer preferences will set the course for D2C brands to not only survive but thrive in 2023 and beyond, defining success in the digital era."
+  },
+  ]
 
-  return paginate(data, { pageSize: 6 })
+  return paginate(newdata, { pageSize: 6 })
 }
 
 const { page } = Astro.props
@@ -14,15 +27,11 @@ const { page } = Astro.props
 
 <DefaultLayout
   title="Blog"
-  description="An example of a blog with dynamic content fetched from JSONPlaceholder using the title, body and userId."
 >
   <section class="my-12">
     <div class="space-content container">
-      <h1>Blog</h1>
+      <h1>Blogs</h1>
       <p class="text-2xl">
-        An example of a blog with dynamic content fetched from <a href="https://jsonplaceholder.typicode.com/posts"
-          >JSONPlaceholder</a
-        > using the title, body and userId. The Accessible Astro Card Component is used here to display al the posts.
       </p>
     </div>
   </section>
@@ -34,11 +43,12 @@ const { page } = Astro.props
           page.data.map((post) => (
             <li>
               <Card
+                img={post.imgsrc}
                 url={'/blog/' + post.title.replaceAll(' ', '-').toLowerCase()}
                 title={post.title}
-                footer={'userId:' + post.userId}
+                footer={'Writer: ' + post.userId}
               >
-                {post.body}
+                <span class="line-clamp-3">{post.body}</span>
               </Card>
             </li>
           ))

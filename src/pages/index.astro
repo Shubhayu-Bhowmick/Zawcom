@@ -8,66 +8,69 @@ import ContentMedia from '../components/ContentMedia.astro'
 
 <DefaultLayout title="Home">
   <Hero />
-  <section class="my-64">
+  <section id="service" class="my-64">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Features</h2>
+      <h2 class="mb-16 text-6xl">Our Services</h2>
+      <h2 class="mb-8 text-4xl">Marketing</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:tailwind" title="Tailwind CSS">
-          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
+        <Feature icon="mdi:lightbulb-outline" title="Strategic Ad Creation & Innovative Production">
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="a11y Components">
-          17 components and counting, all tried and tested for the most optimal accessible experience for your visitors.
+        <Feature icon="mdi:email-outline" title="Engaging Email & SMS Campaigns">
         </Feature>
-        <Feature icon="mdi:looks" title="Prettier">
-          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
+        <Feature icon="mdi:search-web" title="Paid Social Media & Search Optimization">
         </Feature>
-        <Feature icon="mdi:eslint" title="ESLint">
-          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
+      </div>
+      <h2 class="my-16 text-4xl">Technology</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature icon="mdi:eslint" title="AI & DS for Businesses">
         </Feature>
-        <Feature icon="mdi:book-open-page-variant" title="Blog">
-          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
+        <Feature icon="mdi:laptop" title="Website Development">
         </Feature>
-        <Feature icon="mdi:language-markdown" title="Markdown & MDX">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
+        <Feature icon="mdi:monitor-cellphone" title="UI and UX Enhancement">
         </Feature>
-        <Feature icon="mdi:theme-light-dark" title="Dark mode">
-          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
+        <Feature icon="mdi:feather" title="Seamless Integrations & Tailored Applications">
         </Feature>
-        <Feature icon="mdi:cog" title="Design System">
-          The theme offers some very handy utilities to help you build your website faster.
+      </div>
+      <h2 class="my-16 text-4xl">Strategic Direction & Innovation</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature icon="mdi:cog" title="Strategic Development and Launch of Brand Concepts">
         </Feature>
-        <Feature icon="mdi:lighthouse" title="Lighthouse Scores">
-          Excellent lighthouse scores means your website will load faster and get better SEO rankings.
+        <Feature icon="mdi:chart-arc" title="Crafting Direct-to-Consumer Organizational Structures and Operational Approaches">
+        </Feature>
+        <Feature icon="mdi:camera-enhance" title="Enhancement of Product Portfolio">
         </Feature>
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
+
+ <div class="container" id="work">
+  <h2 class="text-6xl">How We Work</h2>
+  <ContentMedia imgSrc="/analysis.png">
+    <h2>Innovation & Strategy</h2>
     <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for your visitors.
+     We leverage the expertise of our diverse team to employ a tried-and-true innovation approach for the inception and introduction of novel commercial enterprises. Our process involves meticulously analyzing the market to identify untapped and emerging prospects, generating ideas and crafting products centered around human needs, conducting rigorous testing before market entry, and constructing well-considered pathways for the triumphant implementation of direct-to-consumer operational frameworks.
     </p>
   </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.1 AA Compliant</h2>
+  <ContentMedia imgSrc="/design.png" reverseImg={true}>
+    <h2>Brand Strategy & Design</h2>
     <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
+      Our team of brand strategists and designers is dedicated to crafting design solutions that revolve around the needs of humans, encompassing brands, products, and customer interactions. We hold the belief that exceptional strategy and remarkable design are symbiotic partners; one cannot flourish without the other. This collaborative harmony guides our teams in curating unparalleled experiences that resonate with your brand and leave a lasting impression on your valued customers.
     </p>
   </ContentMedia>
-  <section class="mt-64 mb-32">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Counters</h2>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="130" title="Stars" sub="On GitHub" />
-        <Counter count="17" title="Accessible" sub="Components" />
-        <Counter count="500" title="Commits" sub="Merged" />
-        <Counter count="18+" title="Months" sub="Since launch" />
-      </div>
-    </div>
-  </section>
+  <ContentMedia imgSrc="/tech.png">
+    <h2>Product & Technology</h2>
+    <p class="text-2xl">
+      Investing in quality development is crucial, as the expenses of subpar development can be much higher. Our agile framework and skilled team focus on creating superior products for your customers. We start with a thorough evaluation of your current solutions, gather insights into your needs and customer preferences, and design a user-friendly experience. Then, we manage development either with our team or in collaboration with yours, using our proprietary platforms for innovation and growth.
+    </p>
+  </ContentMedia>
+   <ContentMedia imgSrc="/product.png" reverseImg={true}>
+    <h2>Performance & Creative Excellence</h2>
+    <p class="text-2xl">
+    We excel at crafting effective creative resources for cost-efficient customer acquisition and conversion. Our holistic approach covers the entire customer journey, allowing us to optimize resource allocation. We blend quantitative metrics with qualitative essence to enhance performance and build brand equity in each advertisement. Our continuous learning process ensures consistent advertising efficiency and effectiveness.
+    </p>
+  </ContentMedia>
+  
+  </div>
+
+
 </DefaultLayout>
